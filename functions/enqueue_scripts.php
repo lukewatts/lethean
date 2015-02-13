@@ -13,9 +13,9 @@
 	*/
 function lethean_load_scripts() {
 	
+  /* STYLES
+   * ============================== */
 	/**
-	* Load our style and scripts.
-  *
   * wp_enqueue_style( $handle, $src, $deps, $ver, $media )
 	*
 	* @param $handle (string) 			 (required) Name used as a handle for the stylesheet. Default: none
@@ -27,10 +27,14 @@ function lethean_load_scripts() {
 
 	// Load Bootstrap
 	wp_enqueue_style( 'bootstrap', BOOTSTRAP_URI . '/3.3.2/css/bootstrap.min.css', array(), '3.3.2', 'all');
+  wp_enqueue_style( 'font-awesome', PARENT_THEME_LIBS_URI . '/font-awesome/4.3.0/css/font-awesome.min.css', array(), '4.3.0', 'screen' );
 	
 	// Load Main stylesheet
 	wp_enqueue_style( 'lethean', CURRENT_THEME_STYLESHEET, array( 'bootstrap' ), lethean_theme_info( 'Version' ), 'screen' );
-
+  
+  
+  /* SCRIPTS
+   * ============================== */
 	/**
 	 * wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer )
 	 *

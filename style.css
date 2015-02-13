@@ -24,17 +24,21 @@ html, body {
 }
 
 body {
-  background-color: hsl(55, 38%, 94%);
+  background-color: hsl(55, 38%, 94%); /* Cream */
 }
 
 a {
-  color: #6cac70;
+  color: hsl(20, 30%, 50%); /* Orange */
   text-decoration: none;
 }
 
 /* ==============================
  * MODULES
  * ============================== */
+.test {
+  border: 1px solid red;
+}
+
 .affinity4-img-replace {
   /* replace text with a background-image */
   display: inline-block;
@@ -45,6 +49,68 @@ a {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.center {
+  margin: 0 auto;
+  float: none;
+}
+
+/* SOCIAL WIDGET
+ * ============================== */
+.affinity4-lateral-nav .socials {
+  padding: 0 32px;
+}
+
+.socials:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.socials a {
+  /* Dimensions */
+  height: 32px;
+  width: 32px;
+
+  /* Positioning */
+  float: left;
+  padding: 0;
+  margin-right: .5em;
+
+  /* Theme */
+  background-image: url("assets/img/lateral-nav/socials.svg");
+  background-repeat: no-repeat;
+  background-size: 128px 64px;
+  background-color: #FFF;
+  border-radius: 0.25em;
+}
+.socials a.affinity4-twitter {
+  background-position: 0 0;
+}
+.socials a.affinity4-github {
+  background-position: -32px 0;
+}
+.socials a.affinity4-facebook {
+  background-position: -64px 0;
+}
+.socials a.affinity4-dribble {
+  background-position: -96px 0;
+}
+.no-touch .socials a:hover {
+  background-color: #4e6361;
+}
+.no-touch .socials a:hover.affinity4-twitter {
+  background-position: 0 -32px;
+}
+.no-touch .socials a:hover.affinity4-github {
+  background-position: -32px -32px;
+}
+.no-touch .socials a:hover.affinity4-facebook {
+  background-position: -64px -32px;
+}
+.no-touch .socials a:hover.affinity4-dribble {
+  background-position: -96px -32px;
 }
 
 /* ==============================
@@ -82,7 +148,7 @@ header {
   transition-duration: 0.4s;
 
   /* Theme */
-  background: #4e6361;
+  background: hsl(174, 12%, 35%); /* Dark Green */
 }
 
 header.lateral-menu-is-open {
@@ -190,7 +256,7 @@ header.is-fixed {
   top: 0;
   
   /* Theme */
-  background-color: #64807d;
+  background-color: hsl(174, 12%, 45%); /* Light Green */
 }
 
 .affinity4-menu-trigger .affinity4-menu-text {
@@ -370,7 +436,6 @@ header.is-fixed {
   /* Dimensions */
   display: block;
   line-height: 2em;
-  padding: 0 16px 0 32px;
   
   /* Theme */
   color: #aab5b7;
@@ -460,61 +525,6 @@ header.is-fixed {
   transform: translateY(-50%) rotate(90deg);
 }
 
-.affinity4-lateral-nav .socials {
-  padding: 0 32px;
-}
-
-.affinity4-lateral-nav .socials:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.affinity4-lateral-nav .socials a {
-  /* Dimensions */
-  height: 32px;
-  width: 32px;
-
-  /* Positioning */
-  float: left;
-  padding: 0;
-  margin-right: .5em;
-
-  /* Theme */
-  background-image: url("assets/img/lateral-nav/socials.svg");
-  background-repeat: no-repeat;
-  background-size: 128px 64px;
-  background-color: #FFF;
-  border-radius: 0.25em;
-}
-.affinity4-lateral-nav .socials a.affinity4-twitter {
-  background-position: 0 0;
-}
-.affinity4-lateral-nav .socials a.affinity4-github {
-  background-position: -32px 0;
-}
-.affinity4-lateral-nav .socials a.affinity4-facebook {
-  background-position: -64px 0;
-}
-.affinity4-lateral-nav .socials a.affinity4-dribble {
-  background-position: -96px 0;
-}
-.no-touch .affinity4-lateral-nav .socials a:hover {
-  background-color: #4e6361;
-}
-.no-touch .affinity4-lateral-nav .socials a:hover.affinity4-twitter {
-  background-position: 0 -32px;
-}
-.no-touch .affinity4-lateral-nav .socials a:hover.affinity4-github {
-  background-position: -32px -32px;
-}
-.no-touch .affinity4-lateral-nav .socials a:hover.affinity4-facebook {
-  background-position: -64px -32px;
-}
-.no-touch .affinity4-lateral-nav .socials a:hover.affinity4-dribble {
-  background-position: -96px -32px;
-}
-
 /* MAIN CONTENT
  * ============================== */
 .affinity4-main-content {
@@ -555,5 +565,78 @@ header.is-fixed {
 @media only screen and (min-width: 768px) {
   .affinity4-main-content {
     padding-top: 70px;
+  }
+}
+
+/* ==============================
+ * FOOTER
+ * ============================== */
+
+/* SUBFOOTER
+ * ========== */
+.sub-footer {
+  background-color: hsl(190, 14%, 16%);
+}
+
+/* FOOTER
+ * ========== */
+footer {
+  /* Dimensions */
+  padding-top: 30px;
+  padding-bottom: 20px;
+  
+  /* Theme */
+  background-color: hsl(174, 12%, 35%);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.footer-nav, .socials {
+  /* Position */
+  float: none;
+  margin-top: 30px;
+  
+}
+
+.footer-nav {
+  padding-bottom: 0;
+  
+  /* Theme */
+  list-style: outside none none;
+}
+
+.footer-nav > li {
+  /* Position */
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.footer-nav a {
+  color: hsl(20, 30%, 50%);
+}
+
+.socials a {
+  margin-right: 0.75em;
+}
+
+@media (min-width: 768px) {
+  .copyright-info {
+    float: left;
+  }
+  
+  footer ul.footer-nav,
+  footer div.socials {
+    float: right;
+  }
+  
+  .footer-nav, .socials {
+    margin-top: 0;
+  }
+  
+  footer .socials {
+    margin-left: 1rem;
+    margin-top: -0.5rem;
   }
 }

@@ -25,8 +25,9 @@ function lethean_register_nav_menus() {
 	 * @param $description (string) (required) Menu description - for identifying the menu in the dashboard.
 	 * @since 1.0.0
 	 */
-	register_nav_menu( 'lateral-nav', __( 'Lateral Nav' ) );
-	register_nav_menu( 'top-nav', __( 'Top Nav' ) );
-
+	register_nav_menu( 'lateral-nav', __( 'Lateral Nav', lethean_theme_info( 'TextDomain' ) ) );
+	register_nav_menu( 'top-nav', __( 'Top Nav', lethean_theme_info( 'TextDomain' ) ) );
+  register_nav_menu( 'footer-nav', __( 'Footer Nav', lethean_theme_info( 'TextDomain' ) ) );
+      
 }
 add_action( 'init', 'lethean_register_nav_menus' );

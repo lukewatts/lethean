@@ -41,6 +41,6 @@ load_theme_textdomain( lethean_theme_info( 'TextDomain' ), CURRENT_THEME_BASE_PA
 
 require_once( CURRENT_THEME_BASE_PATH . '/functions/enqueue_scripts.php' );
 require_once( CURRENT_THEME_BASE_PATH . '/functions/header/title.php' );
-require_once( CURRENT_THEME_BASE_PATH . '/functions/header/navs.php' );
+require_once( CURRENT_THEME_BASE_PATH . '/functions/menus/navs.php' );
 require_once( CURRENT_THEME_BASE_PATH . '/functions/sidebars/register_sidebars.php' );
 require_once( CURRENT_THEME_BASE_PATH . '/functions/sidebars/register_widgets.php' );
