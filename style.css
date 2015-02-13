@@ -1,0 +1,559 @@
+/*
+Theme Name: Lethean
+Theme URI: http://demo.affinity4.ie/lethean
+Author: Affinity4, Luke Watts
+Author URI: http://affinity4.ie
+Description: Responsive theme for WordPress developers
+Version: 1.0.0
+License: Proprietary
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: lethean
+*/
+
+/* ============================== 
+ * BASE
+ * ============================== */
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  /* you need to set this to assign to the main element a min height of 100% */
+  height: 100%;
+}
+
+body {
+  background-color: hsl(55, 38%, 94%);
+}
+
+a {
+  color: #6cac70;
+  text-decoration: none;
+}
+
+/* ==============================
+ * MODULES
+ * ============================== */
+.affinity4-img-replace {
+  /* replace text with a background-image */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* ==============================
+ * MAIN COMPONENTS
+ * ============================== */
+
+/* HEADER
+ * ============================== */
+.admin-bar header {
+	top: 46px;
+}
+
+header {
+  /* Dimensions */
+  height: 50px;
+  width: 100%;
+
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* Visibility */
+  z-index: 3;
+
+  /* State */
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+
+  /* Theme */
+  background: #4e6361;
+}
+
+header.lateral-menu-is-open {
+  /* translate to show the lateral menu */
+  -webkit-transform: translateX(-260px);
+  -moz-transform: translateX(-260px);
+  -ms-transform: translateX(-260px);
+  -o-transform: translateX(-260px);
+  transform: translateX(-260px);
+}
+
+header.is-fixed {
+  position: fixed;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    height: 70px;
+  }
+
+  .admin-bar header {
+  	top: 32px;
+  }
+}
+
+/* LOGO
+ * ============================== */
+.affinity4-logo {
+  /* Dimensions */
+  display: block;
+  
+  /* Positioning */
+  float: left;
+  margin: 12px 0 0 20px;
+}
+.affinity4-logo img {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  .affinity4-logo {
+    margin: 22px 0 0 30px;
+  }
+}
+
+/* TOP NAV
+ * ============================== */
+.affinity4-top-nav {
+  /* Dimensions */
+  height: 100%;
+
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  right: 120px;
+
+  /* Visibility */
+  display: none;
+}
+
+.affinity4-top-nav ul {
+  /* Dimensions */
+  height: 100%;
+
+  /* Positioning */
+  padding-top: 18px;
+}
+
+.affinity4-top-nav li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.affinity4-top-nav a {
+  display: inline-block;
+  padding: .5em;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.affinity4-top-nav .current_page_item > a {
+	background-color: #242e30;	
+}
+
+.no-touch .affinity4-top-nav a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media only screen and (min-width: 768px) {
+  .affinity4-top-nav {
+    display: block;
+  }
+}
+
+/* MENU TRIGGER
+ * ============================== */
+.affinity4-menu-trigger {
+  /* Dimensions */
+  height: 100%;
+  width: 50px;
+
+  /* Positioning */
+  position: absolute;
+  right: 0;
+  top: 0;
+  
+  /* Theme */
+  background-color: #64807d;
+}
+
+.affinity4-menu-trigger .affinity4-menu-text {
+  /* Dimensions */
+  height: 100%;
+
+  /* Visisbility */
+  display: none;
+
+  /* Theme */
+  text-transform: uppercase;
+  color: #FFF;
+  font-weight: 600;
+}
+
+.affinity4-menu-trigger .affinity4-menu-icon {
+  /* Dimensions */
+  width: 18px;
+  height: 2px;
+
+  /* Positioning */
+  display: inline-block;/* this span is the central line in the menu menu */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  
+  /* State */
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+
+  /* Theme */ 
+  background-color: #FFF; /* these are the upper and lower lines in the menu menu */
+}
+
+.affinity4-menu-trigger .affinity4-menu-icon::before,
+.affinity4-menu-trigger .affinity4-menu-icon:after {
+  /* Dimensions */
+  width: 100%;
+  height: 100%;
+
+  /* Positioning */
+  position: absolute;
+  left: 0;
+
+  /* Visibility */
+  content: '';
+  
+  /* Theme */
+  background-color: inherit;
+}
+
+.affinity4-menu-trigger .affinity4-menu-icon::before {
+  bottom: 5px;
+}
+
+.affinity4-menu-trigger .affinity4-menu-icon::after {
+  top: 5px;
+}
+
+.affinity4-menu-trigger.is-clicked .affinity4-menu-icon {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.affinity4-menu-trigger.is-clicked .affinity4-menu-icon::before,
+.affinity4-menu-trigger.is-clicked .affinity4-menu-icon::after {
+  background-color: white;
+}
+
+.affinity4-menu-trigger.is-clicked .affinity4-menu-icon::before {
+  /* Positioning */
+  bottom: 0;
+
+  /* State */
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.affinity4-menu-trigger.is-clicked .affinity4-menu-icon::after {
+  /* Positioning */
+  top: 0;
+
+  /* State */
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+@media only screen and (min-width: 768px) {
+  .affinity4-menu-trigger {
+    /* Dimensions */
+    width: 110px;
+    padding-left: 1.25em;
+  }
+
+  .affinity4-menu-trigger .affinity4-menu-text {
+    /* Positioning */
+    display: inline-block;
+    line-height: 70px;
+  }
+
+  .affinity4-menu-trigger .affinity4-menu-icon {
+    /* Positioning */
+    left: auto;
+    right: 1.25em;
+
+    /* State */
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+/* LATERAL NAV
+ * ============================== */
+.affinity4-lateral-nav {
+  /* Dimensions */
+  height: 100%;
+  width: 260px;
+
+  /* Positioning */
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  /* Visibility */
+  visibility: hidden;
+  z-index: 1; /* the secondary navigation is covered by the main element */
+  overflow-y: auto;
+  
+  /* State */
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: -webkit-transform .4s 0s, visibility 0s .4s;
+  -moz-transition: -moz-transform .4s 0s, visibility 0s .4s;
+  transition: transform .4s 0s, visibility 0s .4s;
+  /* this creates the subtle slide in animation of the navigation */
+  -webkit-transform: translateX(80px);
+  -moz-transform: translateX(80px);
+  -ms-transform: translateX(80px);
+  -o-transform: translateX(80px);
+  transform: translateX(80px);
+
+  /* Theme */
+  background-color: #242e30;
+}
+
+.admin-bar .affinity4-lateral-nav {
+	top: 46px;
+}
+
+.affinity4-lateral-nav .affinity4-navigation {
+  margin: 10px 0 16px;
+}
+
+.affinity4-lateral-nav .sub-menu {
+  /* Positioning */
+  padding: 0 10px 20px 15px;
+
+  /* Visibility */
+  display: none;
+}
+
+.affinity4-lateral-nav a {
+  /* Dimensions */
+  display: block;
+  line-height: 2em;
+  padding: 0 16px 0 32px;
+  
+  /* Theme */
+  color: #aab5b7;
+}
+
+.affinity4-lateral-nav .current_page_item > a {
+	background-color: #3a4a4d;
+  color: #FFF;
+}
+
+.no-touch .affinity4-lateral-nav a:hover {
+  color: #FFF;
+}
+
+@media only screen and (min-width: 768px) {
+  .affinity4-lateral-nav .affinity4-navigation {
+    margin: 20px 0;
+  }
+
+  .admin-bar .affinity4-lateral-nav {
+		top: 32px;
+	}
+}
+
+.affinity4-lateral-nav.lateral-menu-is-open {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+  visibility: visible;
+  -webkit-transition: -webkit-transform .4s 0s, visibility 0s 0s;
+  -moz-transition: -moz-transform .4s 0s, visibility 0s 0s;
+  transition: transform .4s 0s, visibility 0s 0s;
+  /* smooth the scrolling on touch devices - webkit browsers */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* style menu items which have a submenu  */
+.affinity4-lateral-nav .menu-item-has-children > a {
+  /* Positioning */
+  position: relative;
+
+  /* Theme */
+  text-transform: uppercase;
+  font-weight: 600; /* this is the right arrow to show that the item has a submenu  */
+}
+
+.affinity4-lateral-nav .menu-item-has-children > a::after {
+  /* Dimensions */
+  height: 11px;
+  width: 8px;
+
+  /* Positioning */
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  bottom: auto;
+
+  /* Visisbility */
+  content: '';
+  display: block;
+  
+  /* State */
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+
+  /* Theme */
+  background: url("assets/img/lateral-nav/arrow.svg") no-repeat center center;
+  background-size: 8px 11px;
+}
+
+.affinity4-lateral-nav .menu-item-has-children > a.submenu-open::after {
+  -webkit-transform: translateY(-50%) rotate(90deg);
+  -moz-transform: translateY(-50%) rotate(90deg);
+  -ms-transform: translateY(-50%) rotate(90deg);
+  -o-transform: translateY(-50%) rotate(90deg);
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.affinity4-lateral-nav .socials {
+  padding: 0 32px;
+}
+
+.affinity4-lateral-nav .socials:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.affinity4-lateral-nav .socials a {
+  /* Dimensions */
+  height: 32px;
+  width: 32px;
+
+  /* Positioning */
+  float: left;
+  padding: 0;
+  margin-right: .5em;
+
+  /* Theme */
+  background-image: url("assets/img/lateral-nav/socials.svg");
+  background-repeat: no-repeat;
+  background-size: 128px 64px;
+  background-color: #FFF;
+  border-radius: 0.25em;
+}
+.affinity4-lateral-nav .socials a.affinity4-twitter {
+  background-position: 0 0;
+}
+.affinity4-lateral-nav .socials a.affinity4-github {
+  background-position: -32px 0;
+}
+.affinity4-lateral-nav .socials a.affinity4-facebook {
+  background-position: -64px 0;
+}
+.affinity4-lateral-nav .socials a.affinity4-dribble {
+  background-position: -96px 0;
+}
+.no-touch .affinity4-lateral-nav .socials a:hover {
+  background-color: #4e6361;
+}
+.no-touch .affinity4-lateral-nav .socials a:hover.affinity4-twitter {
+  background-position: 0 -32px;
+}
+.no-touch .affinity4-lateral-nav .socials a:hover.affinity4-github {
+  background-position: -32px -32px;
+}
+.no-touch .affinity4-lateral-nav .socials a:hover.affinity4-facebook {
+  background-position: -64px -32px;
+}
+.no-touch .affinity4-lateral-nav .socials a:hover.affinity4-dribble {
+  background-position: -96px -32px;
+}
+
+/* MAIN CONTENT
+ * ============================== */
+.affinity4-main-content {
+  /* Dimensions */
+  min-height: 100%; /* set a min-height and a z-index to be sure that the main element completely covers the lateral menu */
+  
+  /* Positioning */
+  position: relative;
+  padding-top: 50px;
+
+  /* Visisbility */
+  z-index: 2;
+  
+  /* Theme */
+  background-color: #f5f4e9;
+  
+  /* State */
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.affinity4-main-content.lateral-menu-is-open {
+  /* translate to show the lateral menu - all content needs to be put in the .affinity4-main-content to translate*/
+  -webkit-transform: translateX(-260px);
+  -moz-transform: translateX(-260px);
+  -ms-transform: translateX(-260px);
+  -o-transform: translateX(-260px);
+  transform: translateX(-260px);
+}
+
+@media only screen and (min-width: 768px) {
+  .affinity4-main-content {
+    padding-top: 70px;
+  }
+}
