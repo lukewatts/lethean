@@ -1,37 +1,22 @@
 <?php // START OF footer.php ?>
   <div class="sub-footer container-fluid test">
-    <div class="col-lg-3 test">
-      <h2>Title</h2>
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-      </ul>
-    </div>
-    <div class="col-lg-3 test">
-      <h2>Title</h2>
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-      </ul>
-    </div>
-    <div class="col-lg-3 test">
-      <h2>Title</h2>
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-      </ul>
-    </div>
-    <div class="col-lg-3 test">
-      <h2>Title</h2>
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-      </ul>
-    </div>
+    
+    <?php if ( is_active_sidebar( 'footer-area-1' ) ) : ?>
+			<?php dynamic_sidebar( 'footer-area-1' ); ?>
+	<?php endif; ?>
+    
+    <?php if ( is_active_sidebar( 'footer-area-2' ) ) : ?>
+			<?php dynamic_sidebar( 'footer-area-2' ); ?>
+	<?php endif; ?>
+    
+    <?php if ( is_active_sidebar( 'footer-area-3' ) ) : ?>
+			<?php dynamic_sidebar( 'footer-area-3' ); ?>
+	<?php endif; ?>
+    
+    <?php if ( is_active_sidebar( 'footer-area-4' ) ) : ?>
+			<?php dynamic_sidebar( 'footer-area-4' ); ?>
+	<?php endif; ?>
+    
   </div>
 
 	<footer class="container-fluid">
@@ -53,7 +38,8 @@
           'container'       => false,
           'menu_class'      => 'footer-nav',
           'menu_id'         => 'footer-nav',
-          'fallback_cb'     => false
+          'fallback_cb'     => false,
+          'depth'           => -1
         );
 
         wp_nav_menu( $footer_nav_atts );

@@ -44,7 +44,7 @@
 				'container_class' => 'affinity4-top-nav',
 				'container_id'    => 'affinity4-top-nav',
 				'menu_class'      => 'menu-top-nav',
-				'depth'           => 0
+				'depth'           => -1
 			);
 			
 			wp_nav_menu( $top_nav_atts );
